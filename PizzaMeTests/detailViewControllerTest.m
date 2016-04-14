@@ -1,18 +1,18 @@
 //
-//  PizzaMeTests.m
-//  PizzaMeTests
+//  detailViewControllerTest.m
+//  PizzaMe
 //
-//  Created by Md Adit Hasan on 4/4/16.
+//  Created by Md Adit Hasan on 4/5/16.
 //  Copyright © 2016 Md Adit Hasan. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
-#import "APICall.h"
-@interface PizzaMeTests : XCTestCase
+#import "iService.h"
+@interface detailViewControllerTest : XCTestCase
 
 @end
 
-@implementation PizzaMeTests
+@implementation detailViewControllerTest
 
 - (void)setUp {
     [super setUp];
@@ -22,17 +22,16 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
-    
-
 }
 
 - (void)testExample {
     // This is an example of a functional test case.
-    [APICall loadNearByPizza:@"78758" pizzas:^(NSArray *pizzas) {
-        XCTAssertTrue([pizzas count]==10);
-    }];
-
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    [iService callToMobileNumber:@"6414517782" completionHandler:^(BOOL success) {
+        
+        XCTAssertTrue(success);
+        
+    } controller:[[UIViewController alloc] init]];
 }
 
 - (void)testPerformanceExample {

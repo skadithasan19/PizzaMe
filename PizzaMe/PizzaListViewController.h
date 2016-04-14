@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PizzaListViewController.h
 //  PizzaMe
 //
 //  Created by Md Adit Hasan on 4/4/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PizzaListViewController : UIViewController
 
 @end
-
